@@ -1,7 +1,6 @@
 # Introdução ao Aprendizado de Máquina Supervisionado com Python
 
-[![Python](https://img.shields.io/badge/Python-3.6.8-blue)](https://www.python.org) [![Jupyter Notebook](https://img.shields.io/badge/Jupyter%20Notebook-6.0.2-orange)](https://jupyter.org/)
-[![VS Code](https://img.shields.io/badge/Visual%20Studio%20Code-1.42.0-purple)](https://code.visualstudio.com/)
+[![Python](https://img.shields.io/badge/Python-3.6.8-blue)](https://www.python.org) [![Jupyter Notebook](https://img.shields.io/badge/Jupyter%20Notebook-6.0.2-orange)](https://jupyter.org/) [![VS Code](https://img.shields.io/badge/Visual%20Studio%20Code-1.42.0-purple)](https://code.visualstudio.com/)
 
 Repositório com Materiais do Minicurso de Introdução ao Aprendizado de Máquina Supervisionado utilizando a linguagem Python.
 
@@ -16,10 +15,10 @@ O Conjunto de Dados a ser utilizado durante o minicurso é uma cópia dos dados 
 Com o carregamento dos dados, eles serão divididos utilizando o método de Reamostragem _Holdout_ onde 60% dos dados são destinados para treino e 40% para teste dos algoritmos de Classificação.
 
 No total, 4 algoritmos de Classificação são utilizados, sendo eles:
-- _Multinomial Naive Bayes_;
-- _Decision Tree_;
-- _Random Forest_;
-- _Adaptive Boosting_.
+- [_Multinomial Naive Bayes_](https://scikit-learn.org/stable/modules/generated/sklearn.naive_bayes.MultinomialNB.html);
+- [_Decision Tree_](https://scikit-learn.org/stable/modules/generated/sklearn.tree.DecisionTreeClassifier.html);
+- [_Random Forest_](https://scikit-learn.org/stable/modules/generated/sklearn.ensemble.RandomForestClassifier.html);
+- [_Adaptive Boosting_](https://scikit-learn.org/stable/modules/generated/sklearn.ensemble.AdaBoostClassifier.html).
 
 Com o treinamento dos algoritmos e as previsões dos mesmos realizadas, os resultados são calculados a partir do acerto das previsões em relação as rótulos verdadeiros para os dados.
 
