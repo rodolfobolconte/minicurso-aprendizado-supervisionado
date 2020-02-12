@@ -1,5 +1,8 @@
 # Introdução ao Aprendizado de Máquina Supervisionado com Python
 
+[![Python](https://img.shields.io/badge/Python-3.6.8-blue)](https://www.python.org) [![Jupyter Notebook](https://img.shields.io/badge/Jupyter%20Notebook-6.0.2-orange)](https://jupyter.org/)
+[![VS Code](https://img.shields.io/badge/Visual%20Studio%20Code-1.42.0-purple)](https://code.visualstudio.com/)
+
 Repositório com Materiais do Minicurso de Introdução ao Aprendizado de Máquina Supervisionado utilizando a linguagem Python.
 
 ## Estrutura do Minicurso
