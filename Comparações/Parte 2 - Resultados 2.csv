@@ -1,16 +1,16 @@
 Algoritmos;Métricas Bootstrap;;;;;Métricas Holdout;;;;
 ;[VN FP];[FN VP];Acurácia;Precisão;Sensibilidade;[VN FP];[FN VP];Acurácia;Precisão;Sensibilidade
-Multinomial NB;[47 18];[  2 127];0.8969;0.8759;0.9845;[47 18];[  2 127];0.9124;0.9179;0.9535
-Decision Tree;[60  5];[  9 120];0.9278;0.9600;0.9302;[60  5];[  9 120];0.9072;0.9664;0.8915
-Random Forest;[63  2];[  1 128];0.9845;0.9846;0.9922;[63  2];[  1 128];0.9485;0.9837;0.9380
-Adaptive Boosting;[62  3];[  2 127];0.9742;0.9769;0.9845;[62  3];[  2 127];0.9485;0.9760;0.9457
+Multinomial NB;[44 18];[  4 128];0.8866;0.8767;0.9697;[44 18];[  4 128];0.8763;0.8473;0.9652
+Decision Tree;[58  4];[  5 127];0.9536;0.9695;0.9621;[58  4];[  5 127];0.9433;0.9727;0.9304
+Random Forest;[60  2];[  2 130];0.9794;0.9848;0.9848;[60  2];[  2 130];0.9794;0.9912;0.9739
+Adaptive Boosting;[59  3];[  2 130];0.9742;0.9774;0.9848;[59  3];[  2 130];0.9845;0.9746;10.000
 ;;;;;;;;;;
 ;;;;;;;;;;
 ;;;;;;;;;;
 #Modelos Multinomial Naive Bayes para serem utilizandos com Reamostragem Holdout e Bootstrap;;;;;;;;;;
-alpha = 1.0;;;;;;;;;;
-fit_prior = True;;;;;;;;;;
-class_prior = None;;;;;;;;;;
+alpha = 0.5;;;;;;;;;;
+fit_prior = False;;;;;;;;;;
+class_prior = [0.25, 0.5];;;;;;;;;;
 modelMNHT = MultinomialNB(alpha=alpha,;;;;;;;;;;
                           fit_prior=fit_prior,;;;;;;;;;;
                           class_prior=class_prior);;;;;;;;;;
@@ -19,13 +19,13 @@ modelMNBT = MultinomialNB(alpha=alpha,;;;;;;;;;;
                           class_prior=class_prior);;;;;;;;;;
 ;;;;;;;;;;
 #Modelos Decision Tree para serem utilizandos com Reamostragem Holdout e Bootstrap;;;;;;;;;;
-criterion = 'gini' #'gini' ou 'entropy';;;;;;;;;;
-splitter = 'best' #'best' ou 'random';;;;;;;;;;
-max_depth = None;;;;;;;;;;
-min_samples_split = 2;;;;;;;;;;
-min_samples_leaf = 1;;;;;;;;;;
-max_features = 'auto' #'auto' == 'sqrt' ou 'log2' ou None;;;;;;;;;;
-max_leaf_nodes = None;;;;;;;;;;
+criterion = 'entropy' #'gini' ou 'entropy';;;;;;;;;;
+splitter = 'random' #'best' ou 'random';;;;;;;;;;
+max_depth = 4;;;;;;;;;;
+min_samples_split = 4;;;;;;;;;;
+min_samples_leaf = 2;;;;;;;;;;
+max_features = 'log2' #'auto' == 'sqrt' ou 'log2' ou None;;;;;;;;;;
+max_leaf_nodes = 8;;;;;;;;;;
 modelDTHT = DecisionTreeClassifier(criterion=criterion,;;;;;;;;;;
                                    splitter=splitter,;;;;;;;;;;
                                    max_depth=max_depth,;;;;;;;;;;
@@ -42,15 +42,15 @@ modelDTBT = DecisionTreeClassifier(criterion=criterion,;;;;;;;;;;
                                    max_leaf_nodes=max_leaf_nodes);;;;;;;;;;
 ;;;;;;;;;;
 #Modelos Random Forest para serem utilizandos com Reamostragem Holdout e Bootstrap;;;;;;;;;;
-n_estimators = 100;;;;;;;;;;
-criterion = 'gini' #'gini' ou 'entropy';;;;;;;;;;
-max_depth = None;;;;;;;;;;
-min_samples_split = 2;;;;;;;;;;
-min_samples_leaf = 1;;;;;;;;;;
-max_features = 'auto' #'auto' == 'sqrt' ou 'log2' ou None;;;;;;;;;;
-max_leaf_nodes = None;;;;;;;;;;
-bootstrap = True;;;;;;;;;;
-max_samples = None;;;;;;;;;;
+n_estimators = 50;;;;;;;;;;
+criterion = 'entropy' #'gini' ou 'entropy';;;;;;;;;;
+max_depth = 4;;;;;;;;;;
+min_samples_split = 4;;;;;;;;;;
+min_samples_leaf = 2;;;;;;;;;;
+max_features = 'log2' #'auto' == 'sqrt' ou 'log2' ou None;;;;;;;;;;
+max_leaf_nodes = 8;;;;;;;;;;
+bootstrap = False;;;;;;;;;;
+max_samples = 0.5 #intervalo entre 0 e 1;;;;;;;;;;
 modelRFHT = RandomForestClassifier(n_estimators=n_estimators,;;;;;;;;;;
                                    criterion=criterion,;;;;;;;;;;
                                    max_depth=max_depth,;;;;;;;;;;
@@ -72,9 +72,9 @@ modelRFBT = RandomForestClassifier(n_estimators=n_estimators,;;;;;;;;;;
 ;;;;;;;;;;
 #Modelos Adaptive Boosting para serem utilizandos com Reamostragem Holdout e Bootstrap;;;;;;;;;;
 base_estimator = None;;;;;;;;;;
-n_estimators = 50;;;;;;;;;;
-learning_rate = 1;;;;;;;;;;
-algorithm = 'SAMME.R' # 'SAMME.R' ou 'SAMME';;;;;;;;;;
+n_estimators = 100;;;;;;;;;;
+learning_rate = 2;;;;;;;;;;
+algorithm = 'SAMME' # 'SAMME.R' ou 'SAMME';;;;;;;;;;
 modelABHT = AdaBoostClassifier(base_estimator=base_estimator,;;;;;;;;;;
                                n_estimators=n_estimators,;;;;;;;;;;
                                learning_rate=learning_rate,;;;;;;;;;;
