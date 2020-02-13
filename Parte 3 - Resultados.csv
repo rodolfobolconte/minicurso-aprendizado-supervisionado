@@ -1,6 +1,6 @@
 Algoritmos;Métricas Bootstrap
 ;Acurácia;Precisão;Sensibilidade
 Multinomial NB;0.8964;0.8662;0.9721
-Decision Tree;0.8295;0.8592;0.8827
-Random Forest;0.9543;0.9418;0.9771
+Decision Tree;0.8032;0.8772;0.8215
+Random Forest;0.9578;0.9451;0.9802
 Adaptive Boosting;0.7207;0.7579;0.7668

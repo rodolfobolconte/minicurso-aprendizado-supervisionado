@@ -1,6 +1,6 @@
-Algoritmos;Métricas Bootstrap
-;[VN FP];[FN VP];Acurácia;Precisão;Sensibilidade;
-Multinomial NB;[57 20];[  4 113];0.8763;0.8496;0.9658;
-Decision Tree;[59 18];[ 12 105];0.8454;0.8537;0.8974;
-Random Forest;[69  8];[  2 115];0.9485;0.9350;0.9829;
-Adaptive Boosting;[59 18];[  3 114];0.8918;0.8636;0.9744;
+RodolfoAlgoritmos;Métricas Bootstrap;;;;;Métricas Holdout
+;[VN FP];[FN VP];Acurácia;Precisão;Sensibilidade;[VN FP];[FN VP];Acurácia;Precisão;Sensibilidade;
+Multinomial NB;[54 21];[  3 116];0.8763;0.8467;0.9748;[59 18];[  3 114];0.8918;0.8636;0.9744
+Decision Tree;[48 27];[  1 118];0.8557;0.8138;0.9916;[67 10];[  9 108];0.9021;0.9153;0.9231
+Random Forest;[69  6];[  6 113];0.9381;0.9496;0.9496;[72  5];[  1 116];0.9691;0.9587;0.9915
+Adaptive Boosting;[71  4];[ 10 109];0.9278;0.9646;0.9160;[20 57];[98 19];0.2010;0.2500;0.1624
